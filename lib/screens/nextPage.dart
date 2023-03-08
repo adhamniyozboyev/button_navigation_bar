@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/src/widgets/placeholder.dart'; 
+
 
 class SecondPage extends StatefulWidget {
   final int index;
-  const SecondPage({super.key, required this.index});
+  const SecondPage ({super.key, required this.index} );
 
   @override
   State<SecondPage> createState() => _SecondPageState();
@@ -20,7 +21,9 @@ class _SecondPageState extends State<SecondPage> {
   ];
   Widget func(int ind) {
     return Column(
-      children: [Image.asset(img[ind])],
+      children: [
+        
+        Image.asset(img[ind])],
     );
   }
 

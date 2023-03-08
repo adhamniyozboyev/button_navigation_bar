@@ -16,14 +16,32 @@ class _InfoesState extends State<Infoes> {
   @override
   Widget build(BuildContext context) {
     List list = getAllFoods();
-
+    // late int b;
+    // for (dynamic a = 0; a < 5; a++) {
+    //   a.add(list);
+    //   b = a;
+    // }
     return MaterialApp(
-        // routes: {'/next': (context) => SecondPage(index:2)},
+      routes: {
+        'next':(context) => SecondPage(index: 7)
+      },
+        // routes: {'/next': (context) =>const SecondPage(index: 1,)},
         home: Scaffold(
       body: ListView.builder(
         itemCount: list.length,
         itemBuilder: (context, index) {
           return ListTile(
+            onTap: () {
+              setState(() {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => SecondPage(index: index)));
+
+                Navigator.pushNamed(context, '/next',
+                    arguments: SecondPage(index: index));
+              });
+            },
             leading: CircleAvatar(child: Icon(Icons.food_bank)),
             title: Text(list[index].title),
             subtitle: Row(
@@ -51,10 +69,7 @@ class _InfoesState extends State<Infoes> {
             trailing: IconButton(
                 onPressed: () {
                   setState(() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondPage(index: index)));
+                    Navigator.pushNamed(context, '/next');
                   });
                 },
                 icon: Icon(
