@@ -3,8 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'home/food.dart';
 import 'home/data.dart';
 
-
-int ind =0;
+int ind = 0;
 List<Food> getAllFoods() {
   List<Food> list = [];
   for (Map<String, String> mp in data.values) {
